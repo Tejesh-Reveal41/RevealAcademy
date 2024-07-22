@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -102,6 +103,11 @@ public class WebDriverUtility
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		String filePath = ts.getScreenshotAs(OutputType.BASE64);
 		return filePath;
+	}
+	
+	public static void scrollToElement(WebDriver driver,WebElement ele) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true)", ele);
 	}
 
 }

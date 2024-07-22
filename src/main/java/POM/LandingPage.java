@@ -16,6 +16,13 @@ public class LandingPage {
 	
 	@FindBy(xpath="//p[@class='text-textPrimary font-semibold text-[60px]']")
 	private WebElement welcomeText;
+	
+	@FindBy(xpath="//p[normalize-space()='Healthcare']")
+	private WebElement healthcareTile;
+
+	public WebElement getHealthcareTile() {
+		return healthcareTile;
+	}
 
 	public WebElement getstartedButton() {
 		return startedButton;
